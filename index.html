@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ealaf Shirin | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #2500f886;
+    }
+
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    body.dark-mode header {
+      background: #1e1e1e;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav ul li a, .btn {
+      font-weight: 500;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      padding: 0.7rem 1.5rem;
+      background-color: #0077cc;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #005fa3;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .about, .projects, .contact {
+      padding: 3rem 2rem;
+    }
+
+    .projects {
+      background-color: #f0f4f8;
+    }
+
+    .projects-container {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Ealaf Shirin</h1>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="toggle-dark" class="btn">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+   
+    <h2>Hi, I'm Ealaf Shirin</h2>
+    <p>Full Stack Web Developer & Computer Science Student</p>
+    <a href="#projects" class="btn">See My Work</a>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Currently pursuing Integrated M.Sc. in Computer Science at Pondicherry University. Skilled in both frontend and backend technologies, with a passion for web development, UI design, and real-world problem solving.</p>
+    <ul>
+      <li>Languages: C, C++, Java, JavaScript</li>
+      <li>Web: HTML, CSS, JS, Node.js, React.js, Bootstrap</li>
+      <li>Database: SQL, MongoDB</li>
+      <li>Tools: GitHub, VS Code, MySQL Workbench</li>
+      <li>Currently Learning: Firebase, TypeScript</li>
+    </ul>
+     <br>
+    <a href="https://www.linkedin.com/in/ealaf-shirin" class="btn" target="_blank">LinkedIn Profile</a>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Leaf & Life</h3>
+        <p>A real-time eco conservation challenge app with login and leaderboard features.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Quizify</h3>
+        <p>Online quiz platform with categories, timer, and scoring system using JS and Node.</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: ealafjannath@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/ealafshirin" target="_blank">github.com/ealafshirin</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Ealaf Shirin. All rights reserved.
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-dark');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
